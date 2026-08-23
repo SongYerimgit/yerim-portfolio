@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>송예림 Portfolio</title>
+  <title>SongYerim Portfolio</title>
   <meta name="description" content="성장하는 백엔드 개발자 송예림의 포트폴리오" />
   <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet">
@@ -23,8 +23,8 @@
           <img src="image/otter.png" alt="수달 로고" class="brand-otter-img" />
         </span>
         <span>
-          <strong>Developer Portfolio</strong>
-          <small>Clean · Blue · Green</small>
+          <strong>SongYerim Portfolio</strong>
+          <small> Backend Developer</small>
         </span>
       </a>
       <nav>
@@ -43,21 +43,18 @@
   </header>
 
   <main>
-    <section class="hero" id="home">
-      <div class="container hero-inner">
-        <div class="otter otter-hero" aria-hidden="true">🦦</div>
+    <section class="hero">
+      <img src="image/notebook.png" alt="Notebook" class="notebook-hero">
+      <div class="hero-inner">
         <div class="avatar-wrap">
-          <div class="avatar">Y</div>
-        </div>
+  <div class="avatar">
+    <img src="image/myimage.jpg" alt="myimage.jpg">
+  </div>
+</div>
         <div class="tag">BACKEND DEVELOPER · PORTFOLIO</div>
         <h1>안녕하세요,<br /><span class="accent">문제를 해결하는 개발자</span><br />송예림입니다.</h1>
         <p class="subtitle">사용자 관점에서 문제를 정의하고, 데이터와 구조를 바탕으로 더 빠르고 안정적인 서비스를 만드는 백엔드 개발자입니다.</p>
-        <div class="hero-badges">
-          <a class="badge" href="mailto:syl2549@naver.com"><span class="dot"></span>syl2549@naver.com</a>
-          <a class="badge" href="https://github.com/SongYerimgit" target="_blank" rel="noopener noreferrer"><span
-              class="dot"></span>GitHub</a>
-          <a class="badge" href="#projects"><span class="dot"></span>Projects ↓</a>
-        </div>
+
       </div>
     </section>
 
@@ -73,9 +70,10 @@
             <h3>Profile</h3>
             <p>사용자의 흐름을 이해하고, 팀과 협업하기 쉬운 구조로 개발하는 것을 중요하게 여깁니다. 프론트는 UI와 반응형, 백엔드는 안정성과 효율성을 추구합니다.</p>
             <ul class="profile-list">
-              <li><strong>Name</strong><span>송예림</span></li>
+              <li><strong>Name</strong><span>송예림 / 2003.10.01</span></li>
+              <li><strong>Education</strong><span>IT콘텐츠융합학과 전공</span></li>
               <li><strong>Role</strong><span>Full Stack / Backend Developer</span></li>
-              <li><strong>Focus</strong><span>Structure · Performance · UX</span></li>
+              <li><strong>Focus</strong><span>Data Visualization · Optimization · System Structure</span></li>
             </ul>
           </article>
           <article class="card">
@@ -84,22 +82,22 @@
               <div class="timeline-item">
                 <span class="period">01</span>
                 <div>
-                  <h4>깔끔한 구조</h4>
-                  <p>읽기 쉬운 코드와 유지보수하기 쉬운 구조를 우선합니다.</p>
+                  <h4>의미 있는 데이터 시각화</h4>
+                  <p>복잡한 위치·공공 API 데이터를 사용자가 직관적으로 이해할 수 있는 정보로 가공합니다.</p>
                 </div>
               </div>
               <div class="timeline-item">
                 <span class="period">02</span>
                 <div>
-                  <h4>사용자 중심</h4>
-                  <p>실제로 쓰기 편한 화면을 만듭니다.</p>
+                  <h4>집요한 성능 최적화</h4>
+                  <p>데이터 처리 병목을 찾아내고, 쿼리 최적화와 로직 개선으로 렌더링 속도를 다듬습니다.</p>
                 </div>
               </div>
               <div class="timeline-item">
                 <span class="period">03</span>
                 <div>
-                  <h4>협업 친화</h4>
-                  <p>의사소통으로 협업하기 쉬운 개발을 지향합니다.</p>
+                  <h4>체계적인 시스템 구조</h4>
+                  <p>변화에 유연하게 대응할 수 있도록 예외 처리와 모듈화가 잘 된 백엔드 구조를 설계합니다.</p>
                 </div>
               </div>
             </div>
@@ -260,7 +258,11 @@
           <h2>협업, 이직, 프로젝트 문의 모두 환영합니다.</h2>
           <p>실제 연락처로 바꿔서 사용하면 됩니다.</p>
           <div class="contact-links">
-            <a class="badge" href="mailto:syl2549@naver.com"><span class="dot"></span>Email</a>
+            <button class="badge email-copy-btn" onclick="copyEmail('syl2549@naver.com')">
+              <span class="dot"></span>Emil
+            </button>
+            <!-- 화면 하단에 뜰 토스트 팝업 요소 (footer 아래쪽에 추가) -->
+            <div id="toast" class="toast">이메일 주소가 복사되었습니다! 📋</div>
             <a class="badge" href="https://github.com/SongYerimgit" target="_blank" rel="noopener noreferrer"><span
                 class="dot"></span>GitHub</a>
             <a class="badge" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer"><span

@@ -8,7 +8,7 @@
   --text-main: #10233f;
   --text-sub: #61738d;
   --line: #dce9f3;
-  
+
   --blue: #2563eb;
   --blue-dark: #173b8f;
   --green: #16a477;
@@ -18,16 +18,16 @@
 
 /* 2. 다크 모드 스타일 변수 */
 [data-theme="dark"] {
-  --bg: #0f172a;               /* 깊은 딥블루-네이비 배경 */
-  --bg-card: rgba(30, 41, 59, 0.85); /* 카드 배경 */
-  --bg-section: #090d16;        /* 섹션 구분 배경 */
-  --text-main: #f8fafc;         /* 주 메시지 텍스트 */
-  --text-sub: #94a3b8;          /* 서브 설명 텍스트 */
-  --line: #334155;              /* 테두리 선 */
-  
-  --blue: #60a5fa;              /* 시인성을 높인 시원한 파스텔 블루 */
+  --bg: #0f172a;
+  --bg-card: rgba(30, 41, 59, 0.85);
+  --bg-section: #090d16;
+  --text-main: #f8fafc;
+  --text-sub: #94a3b8;
+  --line: #334155;
+
+  --blue: #60a5fa;
   --blue-dark: #93c5fd;
-  --green: #34d399;             /* 포인트를 주는 파스텔 그린 */
+  --green: #34d399;
   --mint: rgba(52, 211, 153, 0.15);
   --shadow: 0 20px 60px rgba(0, 0, 0, .4);
 }
@@ -40,7 +40,6 @@ html {
   scroll-behavior: smooth;
 }
 
-/* 색상 변수를 전체 요소에 적용 */
 body {
   background-color: var(--bg);
   color: var(--text-main);
@@ -105,7 +104,6 @@ header {
   transition: transform 0.3s ease;
 }
 
-/* 마우스 올렸을 때 살짝 통통 튀는 애니메이션 */
 .brand:hover .brand-badge {
   transform: translateY(-2px) scale(1.05);
   box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
@@ -143,7 +141,7 @@ nav {
 }
 
 nav ul {
- display: flex;
+  display: flex;
   gap: 24px;
   list-style: none;
   margin: 0;
@@ -207,24 +205,45 @@ section {
   z-index: 1;
 }
 
+/* 수달 위치에 배치될 노트북 이미지 전용 스타일 */
+.notebook-hero {
+  position: absolute;
+  top: 23%;
+  right: 12%;
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  z-index: 2;
+  filter: drop-shadow(0 8px 5px rgba(16, 35, 63, .12));
+  animation: notebookFloat 4.5s ease-in-out infinite;
+}
+
 .avatar-wrap {
-  display: inline-grid;
-  padding: 6px;
+ display: inline-grid;
+  padding: 5px; /* 테두리 두께 */
   border-radius: 50%;
   background: linear-gradient(135deg, var(--blue), #75d7bd, var(--green));
-  animation: float 4s ease-in-out infinite;
 }
 
 .avatar {
-  width: 84px;
-  height: 84px;
-  display: grid;
-  place-items: center;
+width: 190px;         /* 원 크기 조절 (기존 84px -> 130px) */
+  height: 190px;        /* width와 동일하게 설정하여 완벽한 정원 유지 */
   border-radius: 50%;
   background: var(--bg);
-  color: var(--blue);
-  font-size: 42px;
-  font-weight: 800;
+  overflow: hidden;      /* 원 밖으로 나가는 이미지 여백 자르기 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 프로필 사진 원본을 원 프레임 중앙에 딱 맞추기 */
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%; /* 기준점을 상단(15%) 위치로 설정 */
+  border-radius: 50%;
+  display: block;
 }
 
 .tag,
@@ -236,16 +255,14 @@ section {
 }
 
 .tag {
-  margin: 25px 0 16px;
+  margin: 14px 0 8px;
 }
 
 .hero h1 {
-  font-size: clamp(38px, 6vw, 70px);
-  line-height: 1.14;
-  letter-spacing: -3px;
-  margin: 0;
-  font-weight: 800;
-  color: var(--text-main);
+ font-size: clamp(28px, 4vw, 46px); /* 최대 크기를 70px -> 46px로 축소 */
+  line-height: 1.25;
+  letter-spacing: -1.5px;
+  margin: 10px 0;
 }
 
 .accent,
@@ -258,9 +275,9 @@ section {
 
 .subtitle {
   color: var(--text-sub);
-  line-height: 1.85;
-  font-size: 16px;
-  margin: 24px 0;
+  line-height: 1.6;
+  font-size: 15px;
+  margin: 14px 0 20px;
 }
 
 .hero-badges,
@@ -360,17 +377,25 @@ section {
 .profile-list li {
   display: flex;
   justify-content: space-between;
-  padding: 14px 0;
+  padding: 20px 0;
   border-bottom: 1px solid var(--line);
   font-size: 13px;
 }
 
+.profile-list li:last-child {
+  border-bottom: none;
+}
+
 .profile-list strong {
   color: var(--text-main);
+  flex-shrink: 0;
+  margin-right: 12px;
 }
 
 .profile-list span {
   color: var(--text-sub);
+  text-align: right;
+  word-break: keep-all;
 }
 
 .timeline-item {
@@ -466,7 +491,6 @@ section {
   color: var(--text-main);
 }
 
-/* Projects Section Styling */
 .project-list {
   display: flex;
   flex-direction: column;
@@ -544,7 +568,6 @@ section {
   color: #fff;
 }
 
-/* Contact Section Styling */
 .contact-section {
   padding-top: 50px;
 }
@@ -598,20 +621,38 @@ section {
   color: #fff;
 }
 
-/* Otter Animation */
-.otter {
-  position: absolute;
-  z-index: 2;
-  font-size: 42px;
-  filter: drop-shadow(0 8px 5px rgba(16, 35, 63, .12));
-  animation: otterFloat 4.5s ease-in-out infinite;
+.email-copy-btn {
+  cursor: pointer;
+  font-family: inherit;
 }
 
-.otter-hero {
-  top: 23%;
-  right: 12%;
-  font-size: 58px;
-  animation-delay: -1s;
+.toast {
+  position: fixed;
+  bottom: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(16, 35, 63, 0.9);
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  pointer-events: none;
+}
+
+.toast.show {
+  bottom: 30px;
+  opacity: 1;
+}
+
+[data-theme="dark"] .toast {
+  background: rgba(248, 250, 252, 0.9);
+  color: #0f172a;
 }
 
 footer {
@@ -655,7 +696,8 @@ footer {
   }
 }
 
-@keyframes otterFloat {
+/* 노트북 이미지용 플로팅 애니메이션 */
+@keyframes notebookFloat {
   0%, 100% {
     transform: translateY(0) rotate(-4deg);
     opacity: .82;
@@ -708,7 +750,6 @@ footer {
   letter-spacing: -0.3px;
 }
 
-/* 통일된 Subtle Chip 스타일 */
 .tech-stack-visual .chip {
   display: inline-block;
   padding: 6px 12px;
@@ -719,14 +760,18 @@ footer {
   transition: all 0.2s ease;
 }
 
-/* 라이트 모드 칩 스타일 */
-.html5, .css3, .js {
+.html5,
+.css3,
+.js {
   background: #edf5ff;
   color: #1e40af;
   border: 1px solid #dbeafe;
 }
 
-.java, .python, .spring, .jsp {
+.java,
+.python,
+.spring,
+.jsp {
   background: #eefcf6;
   color: #065f46;
   border: 1px solid #d1fae5;
@@ -738,13 +783,19 @@ footer {
   border: 1px solid #e2e8f0;
 }
 
-.github, .slack, .notion, .sheets {
+.github,
+.slack,
+.notion,
+.sheets {
   background: #f1f5f9;
   color: #334155;
   border: 1px solid #e2e8f0;
 }
 
-.pandas, .numpy, .matplotlib, .seaborn {
+.pandas,
+.numpy,
+.matplotlib,
+.seaborn {
   background: #f0f7ff;
   color: #1d4ed8;
   border: 1px solid #dbeafe;
@@ -756,14 +807,12 @@ footer {
   border: 1px solid #e2e8f0;
 }
 
-/* 다크 모드 시 기술 스택 칩 가독성 처리 */
 [data-theme="dark"] .tech-stack-visual .chip {
   background: #1e293b;
   color: #cbd5e1;
   border-color: #334155;
 }
 
-/* 호버 효과 */
 .tech-stack-visual .chip:hover,
 [data-theme="dark"] .tech-stack-visual .chip:hover {
   background: var(--blue);
@@ -799,18 +848,22 @@ footer {
   }
 
   .hero {
-    min-height: 650px;
+    min-height: auto;
+  padding: 40px 0 30px;
   }
 
-  .otter-hero {
+  .notebook-hero {
     right: 4%;
     top: 17%;
-    font-size: 42px;
+    width: 42px;
+    height: 42px;
   }
 }
 
 @media(prefers-reduced-motion:reduce) {
-  *, *:before, *:after {
+  *,
+  *:before,
+  *:after {
     animation: none !important;
     scroll-behavior: auto !important;
     transition: none !important;
