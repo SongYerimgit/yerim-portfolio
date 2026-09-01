@@ -31,19 +31,31 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-function copyEmail(email) {
-    // 클립보드 복사 API 실행
-    navigator.clipboard.writeText(email).then(() => {
-        const toast = document.getElementById('toast');
+const emailCopyButton = document.querySelector(".email-copy-btn");
 
-        // 토스트 팝업 띄우기
-        toast.classList.add('show');
+if (emailCopyButton) {
+  emailCopyButton.addEventListener("click", async () => {
+    const email = emailCopyButton.dataset.email;
 
-        // 2초 뒤에 자동으로 사라지게 설정
-        setTimeout(() => {
-            toast.classList.remove('show');
-        }, 2000);
-    }).catch(err => {
-        console.error('복사 실패:', err);
-    });
+    try {
+      await navigator.clipboard.writeText(email);
+
+      let toast = document.querySelector(".toast");
+
+      if (!toast) {
+        toast = document.createElement("div");
+        toast.className = "toast";
+        document.body.appendChild(toast);
+      }
+
+      toast.textContent = "이메일 주소가 복사되었습니다! 📋";
+      toast.classList.add("show");
+
+      setTimeout(() => {
+        toast.classList.remove("show");
+      }, 2200);
+    } catch (error) {
+      window.location.href = `mailto:${email}`;
+    }
+  });
 }
