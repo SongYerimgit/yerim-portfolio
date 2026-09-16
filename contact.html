@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | 송예림</title>
+   
+</head>
+<link rel="stylesheet" href="style.css">
+<body>
+    <header>
+        <div class="container nav"><a class="brand" href="index.html"><span
+                    class="brand-badge">SY</span><span><strong>Song Yerim</strong><small>Backend
+                        Developer</small></span></a><button class="menu-toggle">☰</button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a class="active" href="contact.html">Contact</a></li>
+                </ul><button id="theme-toggle" class="theme-btn"><span class="icon">🌙</span></button>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="page-hero">
+            <div class="container"><span class="eyebrow">05 · CONTACT</span>
+                <h1>함께 더 나은 서비스를<br><span class="gradient-text">만들어가고 싶습니다.</span></h1>
+                <p>문제를 구조적으로 해결하고 사용자에게 가치 있는 서비스를 만드는 과정에 함께하고 싶습니다.</p>
+            </div>
+        </section>
+        <section>
+            <div class="container contact-page">
+                <div class="contact-intro card"><span class="contact-number">SY</span>
+                    <h2>Let's connect</h2>
+                    <p>새로운 협업과 백엔드 개발 기회를 기다리고 있습니다.</p><span class="availability">AVAILABLE FOR NEW
+                        OPPORTUNITIES</span>
+                </div>
+                <div class="contact-cards"><button class="contact-item email-copy-btn"
+                        data-email="syl6627@gmail.com"><span class="contact-icon">✉</span><span><small>Email · Click to
+                                copy</small><strong>syl6627@gmail.com</strong></span><b>↗</b></button><a
+                        class="contact-item" href="https://github.com/SongYerimgit" target="_blank"
+                        rel="noreferrer"><span
+                            class="contact-icon">⌘</span><span><small>GitHub</small><strong>SongYerimgit</strong></span><b>↗</b></a>
+                            <a class="contact-item" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+            <span class="contact-icon">in</span>
+            <span class="contact-item-content">
+              <small>LinkedIn</small>
+              <strong>Connect with me</strong>
+            </span>
+            <span class="contact-arrow">↗</span>
+          </a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">© 2026 Song Yerim.</div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => { const root = document.documentElement, toggle = document.getElementById('theme-toggle'), icon = toggle?.querySelector('.icon'), saved = localStorage.getItem('theme'); const setTheme = t => { root.dataset.theme = t; if (icon) icon.textContent = t === 'dark' ? '☀️' : '🌙'; localStorage.setItem('theme', t) }; setTheme(saved || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')); toggle?.addEventListener('click', () => setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark')); const menu = document.querySelector('.menu-toggle'), nav = document.querySelector('nav'); menu?.addEventListener('click', () => nav.classList.toggle('open')); document.querySelectorAll('nav a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open'))); document.querySelector('.email-copy-btn')?.addEventListener('click', async e => { const email = e.currentTarget.dataset.email; try { await navigator.clipboard.writeText(email); showToast('이메일 주소가 복사되었습니다! 📋') } catch { location.href = `mailto:${email}` } }) }); function showToast(t) { let x = document.querySelector('.toast'); if (!x) { x = document.createElement('div'); x.className = 'toast'; document.body.append(x) } x.textContent = t; x.classList.add('show'); clearTimeout(window.toastTimer); window.toastTimer = setTimeout(() => x.classList.remove('show'), 2200) }
+    </script>
+</body>
+
+</html>

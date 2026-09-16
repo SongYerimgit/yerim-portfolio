@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | 송예림</title>
+  
+</head>
+
+<link rel="stylesheet" href="style.css">
+<body>
+    <header>
+        <div class="container nav"><a class="brand" href="index.html"><span
+                    class="brand-badge">SY</span><span><strong>Song Yerim</strong><small>Backend
+                        Developer</small></span></a><button class="menu-toggle">☰</button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a class="active" href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul><button id="theme-toggle" class="theme-btn"><span class="icon">🌙</span></button>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="page-hero">
+            <div class="container"><span class="eyebrow">03 · PROJECTS</span>
+                <h1>무엇을 만들었는지보다,<br><span class="gradient-text">왜 만들었는지를 설명합니다.</span></h1>
+                <p>사용자 문제를 정의하고, 서비스 구조와 기술로 해결한 프로젝트입니다.</p>
+            </div>
+        </section>
+        <section>
+            <div class="container project-list">
+                <article class="project-row card">
+                    <div class="project-thumb"><img src="image/R_DASH.jpg" alt="R-Dash 프로젝트"></div>
+                    <div class="project-content">
+                        <div class="meta"><span class="pill">Team Project</span><span class="pill">Data · Web</span>
+                        </div>
+                        <h2>R-Dash</h2>
+                        <p>복잡하고 흩어진 재난 정보를 지도 중심으로 통합해 일반 시민이 재난 예방부터 대처까지 쉽게 이어갈 수 있도록 만든 플랫폼입니다.</p>
+                        <div class="project-highlight"><strong>30초 → 5초</strong><span>API 응답시간 83% 단축</span></div><a
+                            class="primary-btn" href="project-rdash.html">상세 페이지 보기 ↗</a>
+                    </div>
+                </article>
+                <article class="project-row card">
+                    <div class="project-thumb"><img src="image/carpickhomepage.png" alt="CarPick 프로젝트"></div>
+                    <div class="project-content">
+                        <div class="meta"><span class="pill">Team Project</span><span class="pill">Web Service</span>
+                        </div>
+                        <h2>CarPick</h2>
+                        <p>브랜드별로 흩어진 차량 정보와 리테일러 정보를 통합하고, 차량 탐색부터 시승·정비 신청까지 연결한 자동차 정보 플랫폼입니다.</p>
+                        <div class="project-highlight"><strong>정보 단절 해결</strong><span>차량 정보 · 리테일러 · 예약 흐름 통합</span>
+                        </div><a class="primary-btn" href="project-carpick.html">상세 페이지 보기 ↗</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">© 2026 Song Yerim.</div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => { const root = document.documentElement, toggle = document.getElementById('theme-toggle'), icon = toggle?.querySelector('.icon'), saved = localStorage.getItem('theme'); const setTheme = t => { root.dataset.theme = t; if (icon) icon.textContent = t === 'dark' ? '☀️' : '🌙'; localStorage.setItem('theme', t) }; setTheme(saved || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')); toggle?.addEventListener('click', () => setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark')); const menu = document.querySelector('.menu-toggle'), nav = document.querySelector('nav'); menu?.addEventListener('click', () => nav.classList.toggle('open')); document.querySelectorAll('nav a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open'))); document.querySelector('.email-copy-btn')?.addEventListener('click', async e => { const email = e.currentTarget.dataset.email; try { await navigator.clipboard.writeText(email); showToast('이메일 주소가 복사되었습니다! 📋') } catch { location.href = `mailto:${email}` } }) }); function showToast(t) { let x = document.querySelector('.toast'); if (!x) { x = document.createElement('div'); x.className = 'toast'; document.body.append(x) } x.textContent = t; x.classList.add('show'); clearTimeout(window.toastTimer); window.toastTimer = setTimeout(() => x.classList.remove('show'), 2200) }
+    </script>
+</body>
+
+</html>

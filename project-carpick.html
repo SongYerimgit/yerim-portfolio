@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarPick | 송예림</title>
+    
+</head>
+
+<link rel="stylesheet" href="style.css">
+<body>
+    <header>
+        <div class="container nav"><a class="brand" href="index.html"><span
+                    class="brand-badge">SY</span><span><strong>Song Yerim</strong><small>Backend
+                        Developer</small></span></a><button class="menu-toggle">☰</button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a class="active" href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul><button id="theme-toggle" class="theme-btn"><span class="icon">🌙</span></button>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="project-hero">
+            <div class="container"><span class="eyebrow">PROJECT 02 · TEAM PROJECT</span>
+                <h1>CarPick<br><span class="gradient-text">자동차 정보 통합 플랫폼</span></h1>
+                <p>차량 정보 조회부터 리테일러 검색, 시승·정비 예약까지 연결한 자동차 서비스입니다.</p><img class="detail-image" src="image/carpickhomepage.png"
+                    alt="CarPick 자동차 정보 플랫폼 화면">
+            </div>
+        </section>
+        <section>
+            <div class="container detail-grid">
+                <article class="detail-main">
+                    <div class="detail-block"><span class="eyebrow">BACKGROUND</span>
+                        <h2>왜 개발했나요?</h2>
+                        <p>자동차 산업은 빠르게 디지털화되고 있으며, 차량 정보 제공과 시승 예약·정비 신청도 온라인으로 이동하고 있습니다. 소비자는 더 많은 정보를 직접 비교하고 확인하려는
+                            니즈를 가지고 있습니다.</p>
+                        <p>하지만 브랜드별 웹사이트나 개별 리테일러를 통해 차량 정보와 신청을 따로 처리해야 했습니다. 다양한 브랜드와 차종, 시승·정비 서비스를 한 번에 비교하고 신청하기
+                            어렵다는 정보 단절 문제를 해결하고자 했습니다.</p>
+                    </div>
+                    <div class="detail-block"><span class="eyebrow">TARGET USERS</span>
+                        <h2>누구를 위한 서비스인가요?</h2>
+                        <ul class="check-list">
+                            <li>여러 브랜드와 차종을 비교하고 싶은 자동차 구매 예정자</li>
+                            <li>가까운 리테일러와 시승 일정을 확인하려는 사용자</li>
+                            <li>차량 정비 서비스를 편리하게 신청하고 싶은 사용자</li>
+                        </ul>
+                    </div>
+                    <div class="detail-block"><span class="eyebrow">SOLUTION</span>
+                        <h2>어떤 문제를 해결했나요?</h2>
+                        <div class="solution-grid">
+                            <div><b>정보 통합</b>
+                                <p>브랜드별 차량 정보를 한곳에서 비교</p>
+                            </div>
+                            <div><b>리테일러 검색</b>
+                                <p>위치 기반 리테일러 정보를 제공</p>
+                            </div>
+                            <div><b>예약 흐름 연결</b>
+                                <p>차량 탐색부터 시승·정비 신청까지 연결</p>
+                            </div>
+                            <div><b>데이터 로직 모듈화</b>
+                                <p>변경에 유연한 예약 흐름 설계</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <aside class="detail-side card"><span class="eyebrow">MY ROLE</span>
+                    <h2>담당 역할</h2>
+                    <ul>
+                        <li>차량 정보 API 연동</li>
+                        <li>연비·연료·등급 조건별 검색 구현</li>
+                        <li>위치 기반 리테일러 데이터 수집·가공</li>
+                        <li>리테일러 조회·검색 기능 개발</li>
+                        <li>시승 예약 데이터 로직 모듈화</li>
+                    </ul><a class="link-btn" href="projects.html">프로젝트 목록으로</a>
+                </aside>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">© 2026 Song Yerim.</div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => { const root = document.documentElement, toggle = document.getElementById('theme-toggle'), icon = toggle?.querySelector('.icon'), saved = localStorage.getItem('theme'); const setTheme = t => { root.dataset.theme = t; if (icon) icon.textContent = t === 'dark' ? '☀️' : '🌙'; localStorage.setItem('theme', t) }; setTheme(saved || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')); toggle?.addEventListener('click', () => setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark')); const menu = document.querySelector('.menu-toggle'), nav = document.querySelector('nav'); menu?.addEventListener('click', () => nav.classList.toggle('open')); document.querySelectorAll('nav a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open'))); document.querySelector('.email-copy-btn')?.addEventListener('click', async e => { const email = e.currentTarget.dataset.email; try { await navigator.clipboard.writeText(email); showToast('이메일 주소가 복사되었습니다! 📋') } catch { location.href = `mailto:${email}` } }) }); function showToast(t) { let x = document.querySelector('.toast'); if (!x) { x = document.createElement('div'); x.className = 'toast'; document.body.append(x) } x.textContent = t; x.classList.add('show'); clearTimeout(window.toastTimer); window.toastTimer = setTimeout(() => x.classList.remove('show'), 2200) }
+    </script>
+</body>
+
+</html>
