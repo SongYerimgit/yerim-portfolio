@@ -92,10 +92,11 @@ header {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: linear-gradient(145deg, #111, #3a1818);
+  background: linear-gradient(145deg, #444444, #3a1818);
   color: #fff;
   font-weight: 800;
-  box-shadow: 0 7px 18px rgba(120, 35, 35, .18)
+  box-shadow: 0 7px 18px rgba(120, 35, 35, .18);
+   overflow: hidden;
 }
 
 .brand strong,
@@ -921,7 +922,7 @@ section {
   padding: 65px;
   text-align: center;
   border-radius: 28px;
-  background: linear-gradient(135deg, #111, #321515);
+  background: linear-gradient(135deg, #acabab, #dfb9b9);
   color: #fff;
   box-shadow: 0 20px 55px rgba(90, 25, 25, .16)
 }
@@ -939,6 +940,32 @@ section {
   background: linear-gradient(135deg, #fff, #f2dddd);
   color: #2a1515
 }
+
+[data-theme="dark"] .cta-box {
+  background: #1c1b1b;
+  color: #f4f2ef;
+}
+
+[data-theme="dark"] .cta-box::before {
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(220, 112, 112, 0.34) 0%,
+      rgba(220, 112, 112, 0.20) 20%,
+      rgba(220, 112, 112, 0.08) 42%,
+      transparent 72%
+    );
+  filter: blur(28px);
+}
+
+[data-theme="dark"] .cta-box h2 {
+  color: #f4f2ef;
+}
+
+[data-theme="dark"] .cta-box .eyebrow {
+  color: #e08080;
+}
+
 
 footer {
   padding: 30px;
