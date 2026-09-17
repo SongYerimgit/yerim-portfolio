@@ -10,29 +10,30 @@
 <link rel="stylesheet" href="style.css">
 
 <body>
-     <header>
-    <div class="container nav"><a class="brand" href="index.html">
-        <span class="brand-badge">
-          <img src="image/smile.png" alt="Song Yerim 로고">
-        </span>
+    <header>
+        <div class="container nav"><a class="brand" href="index.html">
+                <span class="brand-badge">
+                    <img src="image/smile.png" alt="Song Yerim 로고">
+                </span>
 
-        <span>
-          <strong>Song Yerim</strong>
-          <small>Backend Developer</small>
-        </span>
-      </a>
-        <button class="menu-toggle" aria-label="메뉴 열기">☰</button>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a class="active" href="about.html">About</a></li>
-          <li><a href="skills.html">Skills</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul><button id="theme-toggle" class="theme-btn" aria-label="테마 전환"><span class="icon">🌙</span></button>
-      </nav>
-    </div>
-  </header>
+                <span>
+                    <strong>Song Yerim</strong>
+                    <small>Backend Developer</small>
+                </span>
+            </a>
+            <button class="menu-toggle" aria-label="메뉴 열기">☰</button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a class="active" href="about.html">About</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul><button id="theme-toggle" class="theme-btn" aria-label="테마 전환"><span
+                        class="icon">🌙</span></button>
+            </nav>
+        </div>
+    </header>
     <main>
         <section class="page-hero">
             <div class="container"><span class="eyebrow">01 · ABOUT</span>
@@ -53,7 +54,10 @@
                 <div class="grid-2">
                     <article class="card">
                         <h2><span class="eyebrow">MY STORY</span></h2>
-                        <h2>보이지 않는 곳에서<br>서비스를 떠받치는 "수달"</h2>
+                        <h2 class="my-story-title">
+                            보이지 않는 곳에서<br>
+                            서비스를 떠받치는 "수달"
+                        </h2>
 
                         <p>
                             물 위에 떠 있는 수달은 평온해 보이지만,
@@ -76,24 +80,48 @@
                             <li><strong>Availability</strong><span>즉시 입사 가능 · 정규직 희망</span></li>
                         </ul>
                     </article>
-                    <article class="card">
+                    <article class="card core-values-card">
                         <h2>Core Values</h2>
-                        <div class="value"><b>01</b>
-                            <div>
-                                <h3>사용자 경험으로 연결되는 기술</h3>
-                                <p>데이터와 기능을 사용자의 흐름에 맞는 정보로 가공합니다.</p>
+
+                        <div class="core-values-list">
+                            <div class="value">
+                                <b>01</b>
+                                <div>
+                                    <h3>사용자 경험으로 연결되는 기술</h3>
+                                    <p>데이터와 기능을 사용자의 흐름에 맞는 정보로 가공합니다.</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="value"><b>02</b>
-                            <div>
-                                <h3>근거를 바탕으로 한 개선</h3>
-                                <p>호출 흐름, 쿼리, 응답시간을 확인하며 병목의 원인을 찾습니다.</p>
+
+                            <div class="value">
+                                <b>02</b>
+                                <div>
+                                    <h3>근거를 바탕으로 한 개선</h3>
+                                    <p>호출 흐름, 쿼리, 응답시간을 확인하며 병목의 원인을 찾습니다.</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="value"><b>03</b>
-                            <div>
-                                <h3>투명하게 공유하는 협업</h3>
-                                <p>문제와 대안을 문서화해 팀이 같은 기준으로 판단하도록 합니다.</p>
+
+                            <div class="value">
+                                <b>03</b>
+                                <div>
+                                    <h3>투명하게 공유하는 협업</h3>
+                                    <p>문제와 대안을 문서화해 팀이 같은 기준으로 판단하도록 합니다.</p>
+                                </div>
+                            </div>
+
+                            <div class="value">
+                                <b>04</b>
+                                <div>
+                                    <h3>끝까지 책임지는 실행력</h3>
+                                    <p>맡은 일을 끝까지 완수하며, 마감과 결과물의 품질을 함께 지킵니다.</p>
+                                </div>
+                            </div>
+
+                            <div class="value">
+                                <b>05</b>
+                                <div>
+                                    <h3>혼자 앞서가지 않는 조율</h3>
+                                    <p>업무의 우선순위를 정하고 역할을 나누며, 팀원들과 보폭을 맞춥니다.</p>
+                                </div>
                             </div>
                         </div>
                     </article>
