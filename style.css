@@ -292,6 +292,9 @@ section {
 }
 
 .avatar-wrap {
+   position: relative;
+  top: -30px;
+  margin-bottom: -30px;
   width: 180px;
   height: 180px;
   margin: 0 auto 18px;
@@ -305,6 +308,7 @@ section {
       var(--red-dark));
   box-sizing: border-box;
 }
+
 
 .avatar {
   width: 170px;
