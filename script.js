@@ -1,1 +1,48 @@
-document.addEventListener('DOMContentLoaded',()=>{const root=document.documentElement,toggle=document.getElementById('theme-toggle'),icon=toggle?.querySelector('.icon'),saved=localStorage.getItem('theme');const setTheme=t=>{root.dataset.theme=t;if(icon)icon.textContent=t==='dark'?'☀️':'🌙';localStorage.setItem('theme',t)};setTheme(saved||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'));toggle?.addEventListener('click',()=>setTheme(root.dataset.theme==='dark'?'light':'dark'));const menu=document.querySelector('.menu-toggle'),nav=document.querySelector('nav');menu?.addEventListener('click',()=>nav.classList.toggle('open'));document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));document.querySelector('.email-copy-btn')?.addEventListener('click',async e=>{const email=e.currentTarget.dataset.email;try{await navigator.clipboard.writeText(email);showToast('이메일 주소가 복사되었습니다! 📋')}catch{location.href=`mailto:${email}`}})});function showToast(t){let x=document.querySelector('.toast');if(!x){x=document.createElement('div');x.className='toast';document.body.append(x)}x.textContent=t;x.classList.add('show');clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>x.classList.remove('show'),2200)}
+document.addEventListener('DOMContentLoaded', function () {
+    const root = document.documentElement;
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = themeToggle ? themeToggle.querySelector('.icon') : null;
+    const savedTheme = localStorage.getItem('theme');
+
+    function setTheme(theme) {
+        root.dataset.theme = theme;
+        if (themeIcon) themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
+        localStorage.setItem('theme', theme);
+    }
+
+    setTheme(savedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
+    themeToggle?.addEventListener('click', function () {
+        setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark');
+    });
+
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('nav');
+    menuToggle?.addEventListener('click', function () { nav?.classList.toggle('open'); });
+    document.querySelectorAll('nav a').forEach(function (link) {
+        link.addEventListener('click', function () { nav?.classList.remove('open'); });
+    });
+
+    const modal = document.getElementById('experience-modal');
+    const openButton = document.querySelector('.experience-toggle');
+    const closeButtons = modal ? modal.querySelectorAll('[data-modal-close]') : [];
+
+    function openModal() {
+        if (!modal) return;
+        modal.hidden = false;
+        document.body.classList.add('modal-open');
+        modal.querySelector('.modal-close')?.focus();
+    }
+
+    function closeModal() {
+        if (!modal) return;
+        modal.hidden = true;
+        document.body.classList.remove('modal-open');
+        openButton?.focus();
+    }
+
+    openButton?.addEventListener('click', openModal);
+    closeButtons.forEach(function (button) { button.addEventListener('click', closeModal); });
+    document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape' && modal && !modal.hidden) closeModal();
+    });
+});
