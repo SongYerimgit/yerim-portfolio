@@ -5,100 +5,136 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CarPick | 송예림</title>
-    
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+
 </head>
 
-<link rel="stylesheet" href="style.css">
 <body>
-     <header>
-    <div class="container nav"><a class="brand" href="index.html">
-        <span class="brand-badge">
-          <img src="image/smile.png" alt="Song Yerim 로고">
-        </span>
-
-        <span>
-          <strong>Song Yerim</strong>
-          <small>Backend Developer</small>
-        </span>
-      </a>
-        <button class="menu-toggle" aria-label="메뉴 열기">☰</button>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="skills.html">Skills</a></li>
-          <li><a class="active" href="projects.html">Projects</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul><button id="theme-toggle" class="theme-btn" aria-label="테마 전환"><span class="icon">🌙</span></button>
-      </nav>
-    </div>
-  </header>
+    <header>
+        <div class="container nav"><a class="brand" href="index.html"><span class="brand-badge"><img
+                        src="image/smile.png" alt="Song Yerim 로고"></span><span><strong>Song Yerim</strong><small>Backend
+                        Developer</small></span></a><button class="menu-toggle" aria-label="메뉴 열기">☰</button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a class="active" href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul><button id="theme-toggle" class="theme-btn" aria-label="테마 전환"><span
+                        class="icon">🌙</span></button>
+            </nav>
+        </div>
+    </header>
     <main>
-        <section class="project-hero">
-            <div class="container"><span class="eyebrow">PROJECT 02 · TEAM PROJECT</span>
-                <h1>CarPick<br><span class="gradient-text">자동차 정보 통합 플랫폼</span></h1>
-                <p>차량 정보 조회부터 리테일러 검색, 시승·정비 예약까지 연결한 자동차 서비스입니다.</p><img class="detail-image" src="image/carpickhomepage.png"
-                    alt="CarPick 자동차 정보 플랫폼 화면">
+        <section class="carpick-hero">
+            <div class="container carpick-hero-grid">
+                <div class="carpick-hero-copy"><span class="eyebrow">PROJECT 02 · TEAM PROJECT</span>
+                    <p class="project-number">02 / 02</p>
+                    <h1>CarPick<br><span class="gradient-text">자동차 정보 통합 플랫폼</span></h1>
+                    <p class="hero-description">차량 정보 조회부터 리테일러 검색, 시승·정비 예약까지 연결한 자동차 서비스입니다.</p>
+                    <div class="hero-tags"><span>Spring</span><span>Oracle</span><span>데이터베이스 설계</span><span>검색
+                            기능</span></div>
+                </div>
+                <div class="hero-visual"><img class="detail-image" src="image/carpickhomepage.png"
+                        alt="CarPick 자동차 정보 플랫폼 화면"><span class="visual-caption">CarPick · 자동차 정보 통합 화면</span></div>
             </div>
         </section>
-        <section>
-            <div class="container detail-grid">
-                <article class="detail-main">
-                    <div class="detail-block"><span class="eyebrow">BACKGROUND</span>
-                        <h2>왜 개발했나요?</h2>
-                        <p>자동차 산업은 빠르게 디지털화되고 있으며, 차량 정보 제공과 시승 예약·정비 신청도 온라인으로 이동하고 있습니다. 소비자는 더 많은 정보를 직접 비교하고 확인하려는
-                            니즈를 가지고 있습니다.</p>
-                        <p>하지만 브랜드별 웹사이트나 개별 리테일러를 통해 차량 정보와 신청을 따로 처리해야 했습니다. 다양한 브랜드와 차종, 시승·정비 서비스를 한 번에 비교하고 신청하기
-                            어렵다는 정보 단절 문제를 해결하고자 했습니다.</p>
-                    </div>
-                    <div class="detail-block"><span class="eyebrow">TARGET USERS</span>
-                        <h2>누구를 위한 서비스인가요?</h2>
-                        <ul class="check-list">
-                            <li>여러 브랜드와 차종을 비교하고 싶은 자동차 구매 예정자</li>
-                            <li>가까운 리테일러와 시승 일정을 확인하려는 사용자</li>
-                            <li>차량 정비 서비스를 편리하게 신청하고 싶은 사용자</li>
-                        </ul>
-                    </div>
-                    <div class="detail-block"><span class="eyebrow">SOLUTION</span>
-                        <h2>어떤 문제를 해결했나요?</h2>
-                        <div class="solution-grid">
-                            <div><b>정보 통합</b>
-                                <p>브랜드별 차량 정보를 한곳에서 비교</p>
+        <section class="carpick-content-section">
+            <div class="container carpick-layout">
+                <aside class="carpick-index card"><span class="eyebrow">CONTENTS</span><a
+                        href="#background"><b>01</b><span>개발 배경</span></a><a href="#users"><b>02</b><span>사용자와
+                            기능</span></a><a href="#contribution"><b>03</b><span>담당 역할</span></a><a
+                        href="#challenge"><b>04</b><span>어려웠던 점</span></a><a href="#result"><b>05</b><span>결과와 배운
+                            점</span></a></aside>
+                <article class="carpick-story">
+                    <section id="background" class="story-block">
+                        <div class="story-label"><span>01</span><em>BACKGROUND</em></div>
+                        <div class="story-body">
+                            <h2>왜 개발했나요?</h2>
+                            <p>자동차 산업은 빠르게 디지털화되고 있으며, 차량 정보 제공과 시승 예약·정비 신청도 온라인으로 이동하고 있습니다. 소비자는 더 많은 정보를 직접 비교하고
+                                확인하려는 니즈를 가지고 있습니다.</p>
+                            <p>하지만 브랜드별 웹사이트나 개별 리테일러를 통해 차량 정보와 신청을 따로 처리해야 했습니다. 다양한 브랜드와 차종, 시승·정비 서비스를 한 번에 비교하고
+                                신청하기 어렵다는 정보 단절 문제를 해결하고자 했습니다.</p>
+                        </div>
+                    </section>
+                    <section id="users" class="story-block">
+                        <div class="story-label"><span>02</span><em>TARGET USERS</em></div>
+                        <div class="story-body">
+                            <h2>누구를 위한 서비스인가요?</h2>
+                            <div class="user-cards">
+                                <div>여러 브랜드와 차종을 비교하고 싶은<br><b>자동차 구매 예정자</b></div>
+                                <div>가까운 리테일러와 시승 일정을 확인하려는<br><b>사용자</b></div>
+                                <div>차량 정비 서비스를 편리하게 신청하고 싶은<br><b>차량 보유자</b></div>
                             </div>
-                            <div><b>리테일러 검색</b>
-                                <p>위치 기반 리테일러 정보를 제공</p>
-                            </div>
-                            <div><b>예약 흐름 연결</b>
-                                <p>차량 탐색부터 시승·정비 신청까지 연결</p>
-                            </div>
-                            <div><b>데이터 로직 모듈화</b>
-                                <p>변경에 유연한 예약 흐름 설계</p>
+                            <div class="solution-cards">
+                                <div><b>정보 통합</b>
+                                    <p>브랜드별 차량 정보를 한곳에서 비교</p>
+                                </div>
+                                <div><b>리테일러 검색</b>
+                                    <p>위치 기반 리테일러 정보를 제공</p>
+                                </div>
+                                <div><b>예약 흐름 연결</b>
+                                    <p>차량 탐색부터 시승·정비 신청까지 연결</p>
+                                </div>
+                                <div><b>데이터 로직 모듈화</b>
+                                    <p>변경에 유연한 예약 흐름 설계</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </section>
+                    <section id="contribution" class="story-block">
+                        <div class="story-label"><span>03</span><em>MY CONTRIBUTION</em></div>
+                        <div class="story-body">
+                            <h2>담당 역할과 구현 내용</h2>
+                            <p>저는 차량과 리테일러 정보를 데이터베이스 구조로 정리하고, 사용자가 조건에 따라 원하는 정보를 조회할 수 있도록 검색 기능을 담당했습니다.</p>
+                            <div class="role-grid">
+                                <div><b>DB</b><span>차량·리테일러·리테일러 신청·차량 시승 신청 테이블 설계</span></div>
+                                <div><b>DATA</b><span>외부 사이트의 차량 정보를 필요한 컬럼에 맞게 정리해 DB에 저장</span></div>
+                                <div><b>SEARCH</b><span>차량 브랜드·차종·조건별 차량 검색 기능 구현</span></div>
+                                <div><b>RETAILER</b><span>지역과 조건에 따른 리테일러 조회·검색 기능 구현</span></div>
+                                <div><b>DOC</b><span>요구사항과 화면 기능을 정리하고 WBS에 작업 단위를 기록</span></div>
+                            </div>
+                        </div>
+                    </section>
+                    <section id="challenge" class="story-block challenge-block">
+                        <div class="story-label"><span>04</span><em>CHALLENGE &amp; VERIFICATION</em></div>
+                        <div class="story-body">
+                            <h2>데이터를 어떻게 정확한 기능으로 연결했나요?</h2>
+                            <div class="problem-card"><strong>어려웠던 점</strong>
+                                <p>외부 사이트의 차량 정보와 서비스에서 필요한 데이터 구조가 달라, 정보를 그대로 저장하면 검색 조건과 화면에서 요구하는 값이 정확하게 연결되지 않을 수
+                                    있었습니다.</p>
+                            </div>
+                            <div class="process-line">
+                                <div><b>01</b><strong>구조 설계</strong><span>차량·리테일러·신청 관련 테이블과 필요한 컬럼을 정의</span></div>
+                                <div><b>02</b><strong>데이터 정리</strong><span>외부 차량 정보를 서비스의 DB 구조에 맞게 가공해 저장</span></div>
+                                <div><b>03</b><strong>기능 구현</strong><span>차량과 리테일러를 조건별로 조회하는 검색 기능 연결</span></div>
+                                <div><b>04</b><strong>결과 검증</strong><span>전체 수량·컬럼별 결과를 비교하고 무작위 검색으로 누락 확인</span></div>
+                            </div>
+                        </div>
+                    </section>
+                    <section id="result" class="story-block result-block">
+                        <div class="story-label"><span>05</span><em>RESULT &amp; LEARNING</em></div>
+                        <div class="story-body">
+                            <h2>결과와 배운 점</h2>
+                            <div class="metric-banner"><strong>4개 핵심 테이블</strong><span>차량·리테일러·신청 데이터 구조화</span></div>
+                            <p>차량, 리테일러, 리테일러 신청, 차량 시승 신청 테이블을 설계하고 외부 차량 정보를 데이터베이스에 저장했습니다. 이후 차량과 리테일러를 조건별로 조회하는 검색
+                                기능으로 연결했습니다.</p>
+                            <p>구현 후에는 전체 데이터 수량과 컬럼별 조회 결과를 비교하고, 차량과 리테일러를 무작위로 검색하며 데이터 누락과 검색 결과를 확인했습니다. 이 과정을 통해
+                                데이터 구조와 정확성이 기능의 신뢰도에 직접 영향을 준다는 점을 배웠습니다.</p>
+                            <p>또한 요구사항 정의서와 화면별 기능 목록을 바탕으로 테이블과 기능을 연결하면서, 문서로 정리한 요구사항을 실제 시스템 구조와 기능으로 구체화하는 경험을
+                                쌓았습니다.</p>
+                        </div>
+                    </section>
+                     <div class="rdash-links"><a class="link-btn" href="https://github.com/hykim-king/SYNERGY">GITHUB</a><a class="link-btn" href="https://youtu.be/YwntbXkUEH0">상세보기</a></div>
                 </article>
-                <aside class="detail-side card"><span class="eyebrow">MY ROLE</span>
-                    <h2>담당 역할</h2>
-                    <ul>
-                        <li>차량 정보 API 연동</li>
-                        <li>연비·연료·등급 조건별 검색 구현</li>
-                        <li>위치 기반 리테일러 데이터 수집·가공</li>
-                        <li>리테일러 조회·검색 기능 개발</li>
-                        <li>시승 예약 데이터 로직 모듈화</li>
-                    </ul><a class="link-btn" href="https://github.com/hykim-king/SYNERGY">GITHUB</a>
-                    <a class="link-btn" href="https://youtu.be/YwntbXkUEH0">상세보기</a>
-                </aside>
             </div>
         </section>
     </main>
     <footer>
         <div class="container">© 2026 Song Yerim.</div>
     </footer>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => { const root = document.documentElement, toggle = document.getElementById('theme-toggle'), icon = toggle?.querySelector('.icon'), saved = localStorage.getItem('theme'); const setTheme = t => { root.dataset.theme = t; if (icon) icon.textContent = t === 'dark' ? '☀️' : '🌙'; localStorage.setItem('theme', t) }; setTheme(saved || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')); toggle?.addEventListener('click', () => setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark')); const menu = document.querySelector('.menu-toggle'), nav = document.querySelector('nav'); menu?.addEventListener('click', () => nav.classList.toggle('open')); document.querySelectorAll('nav a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open'))); document.querySelector('.email-copy-btn')?.addEventListener('click', async e => { const email = e.currentTarget.dataset.email; try { await navigator.clipboard.writeText(email); showToast('이메일 주소가 복사되었습니다! 📋') } catch { location.href = `mailto:${email}` } }) }); function showToast(t) { let x = document.querySelector('.toast'); if (!x) { x = document.createElement('div'); x.className = 'toast'; document.body.append(x) } x.textContent = t; x.classList.add('show'); clearTimeout(window.toastTimer); window.toastTimer = setTimeout(() => x.classList.remove('show'), 2200) }
-    </script>
 </body>
 
 </html>
-
- 

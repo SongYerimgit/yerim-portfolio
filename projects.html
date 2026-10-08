@@ -5,34 +5,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects | 송예림</title>
-  
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 
-<link rel="stylesheet" href="style.css">
 <body>
     <header>
-    <div class="container nav"><a class="brand" href="index.html">
-        <span class="brand-badge">
-          <img src="image/smile.png" alt="Song Yerim 로고">
-        </span>
+        <div class="container nav"><a class="brand" href="index.html">
+                <span class="brand-badge">
+                    <img src="image/smile.png" alt="Song Yerim 로고">
+                </span>
 
-        <span>
-          <strong>Song Yerim</strong>
-          <small>Backend Developer</small>
-        </span>
-      </a>
-        <button class="menu-toggle" aria-label="메뉴 열기">☰</button>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="skills.html">Skills</a></li>
-           <li><a class="active" href="projects.html">Projects</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul><button id="theme-toggle" class="theme-btn" aria-label="테마 전환"><span class="icon">🌙</span></button>
-      </nav>
-    </div>
-  </header>
+                <span>
+                    <strong>Song Yerim</strong>
+                    <small>Backend Developer</small>
+                </span>
+            </a>
+            <button class="menu-toggle" aria-label="메뉴 열기">☰</button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a class="active" href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul><button id="theme-toggle" class="theme-btn" aria-label="테마 전환"><span
+                        class="icon">🌙</span></button>
+            </nav>
+        </div>
+    </header>
     <main>
         <section class="page-hero">
             <div class="container"><span class="eyebrow">03 · PROJECTS</span>
@@ -49,8 +50,8 @@
                         </div>
                         <h2>R-Dash</h2>
                         <p>복잡하고 흩어진 재난 정보를 지도 중심으로 통합해 일반 시민이 재난 예방부터 대처까지 쉽게 이어갈 수 있도록 만든 플랫폼입니다.</p>
-                        <div class="project-highlight"><strong></strong><span>재난 데이터 · 통계 시각화 · 지도 기반 안전 정보</span></div><a
-                            class="primary-btn" href="project-rdash.html">상세 페이지 보기 ↗</a>
+                        <div class="project-highlight"><strong></strong><span>재난 데이터 · 통계 시각화 · 지도 기반 안전 정보</span></div>
+                        <a class="primary-btn" href="project-rdash.html">상세 페이지 보기 ↗</a>
                     </div>
                 </article>
                 <article class="project-row card">
@@ -70,9 +71,7 @@
     <footer>
         <div class="container">© 2026 Song Yerim.</div>
     </footer>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => { const root = document.documentElement, toggle = document.getElementById('theme-toggle'), icon = toggle?.querySelector('.icon'), saved = localStorage.getItem('theme'); const setTheme = t => { root.dataset.theme = t; if (icon) icon.textContent = t === 'dark' ? '☀️' : '🌙'; localStorage.setItem('theme', t) }; setTheme(saved || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')); toggle?.addEventListener('click', () => setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark')); const menu = document.querySelector('.menu-toggle'), nav = document.querySelector('nav'); menu?.addEventListener('click', () => nav.classList.toggle('open')); document.querySelectorAll('nav a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open'))); document.querySelector('.email-copy-btn')?.addEventListener('click', async e => { const email = e.currentTarget.dataset.email; try { await navigator.clipboard.writeText(email); showToast('이메일 주소가 복사되었습니다! 📋') } catch { location.href = `mailto:${email}` } }) }); function showToast(t) { let x = document.querySelector('.toast'); if (!x) { x = document.createElement('div'); x.className = 'toast'; document.body.append(x) } x.textContent = t; x.classList.add('show'); clearTimeout(window.toastTimer); window.toastTimer = setTimeout(() => x.classList.remove('show'), 2200) }
-    </script>
+
 </body>
 
 </html>
